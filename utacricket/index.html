@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>UTA - Cricket</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="icon" href="img/icon.png" type="image/png" sizes="16x16">
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+	.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+</style>
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+  align:center;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 25px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button_live {
+    background-color: #f58025; 
+    color: white; 
+    border: 2px solid #f58025;
+}
+
+.button_live:hover {
+    background-color: white;
+    color: #f58025;
+    border: 2px solid #f58025;
+}
+</style>
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">UTA CRICKET</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="#top">Top</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#standings">Standings</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link " href="#fixture">Fixtures</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#teams">Teams</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link " href="#leads">Leads</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" target="_new" href="https://drive.google.com/open?id=1XRWh--snQun0CHDxaaSIf2L8MWHEQCZT">RuleBook</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<header id="top">
+<div>
+<p style="text-align:center;font-size:40px"><b>Cricket </b>at <span style="color:#21509a">University of Texas at Arlington</span></p>
+<p style="text-align:center;font-size:40px"><b style="color:#f58025;font-size:45px">UTA</b> <span style=" color:green">Premier League Fall</span> 2018<p>
+<p style="text-align:center;">Grip up for the best cricketing experience in UTA - Full semester long day/night cricket  - Meet new friends, play cricket, and enjoy!</p>
+<div align="center"><a href="http://chauka.in/index.php/site/all_matches_by_own_team/555368"><button  class="button button_live">Live Score</button></a></div>
+</div>
+</header>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 1</div>
+    <img src="img/img_1.jpg" style="width:100%" title="Spring 2018 Champions - UTA Devils">
+	<div class="bottom-right" style="color:white;background-color:black;font-size:18px;padding:5px">Spring 2018 Champions - UTA Devils</div>
+  </div>
+
+  
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+
+</div>
+
+
+    <section id="standings" class="bg-light">
+      <div class="container">
+        <div class="row">
+		<div class="col-lg-10 mx-auto">
+		<h2>Team Standings</h2></div>
+          <div class="col-lg-10 mx-auto">
+            <br>
+			<div style="overflow-y: auto;">
+			<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Rank</th>
+      <th scope="col">Team</th>
+      <th scope="col">Played</th>
+      <th scope="col">Won</th>
+	  <th scope="col">Lost</th>
+	  <th scope="col">Draw</th>
+	  <th scope="col">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <th scope="row">1</th>
+      <td>UTA Titans</td>
+      <td>2</td>
+      <td>2</td>
+	   <td>0</td>
+	    <td>0</td>
+		 <td>9</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>UTA Knights</td>
+      <td>2</td>
+      <td>1</td>
+	   <td>1</td>
+	    <td>0</td>
+		 <td>5</td>
+    </tr>
+   
+    <tr>
+      <th scope="row">3</th>
+      <td>UTA Phantoms</td>
+      <td>2</td>
+      <td>1</td>
+	   <td>1</td>
+	    <td>0</td>
+		 <td>4</td>
+    </tr>
+	<tr>
+      <th scope="row">4</th>
+      <td>UTA Indians</td>
+      <td>2</td>
+      <td>1</td>
+	   <td>1</td>
+	    <td>0</td>
+		 <td>4</td>
+    </tr>
+	
+	 <tr>
+      <th scope="row">5</th>
+      <td>UTA Raptors</td>
+      <td>2</td>
+      <td>0</td>
+	   <td>2</td>
+	    <td>0</td>
+		 <td>0</td>
+    </tr>
+  </tbody>
+</table></div>
+          </div>
+        </div>
+      </div>
+    </section>
+	
+	
+	 <section id="fixture">
+      <div class="container">
+        <div class="row">
+		<div class="col-lg-10 mx-auto">
+		 <h2 >Fixtures</h2></div>
+          <div class="col-lg-10 mx-auto">
+		 
+           <div style="overflow-y: auto;max-height:450px;overflow: auto;">
+			<table style="max-height:200px;overflow: scroll;"class="table table-striped">
+  <thead>
+    <tr>
+	 <th scope="col">#</th>
+      <th scope="col">Date</th>
+      <th scope="col">Teams</th>
+      <th scope="col">Time</th>
+      <th scope="col">Umpire</th>
+	  <th scope="col">MOM</th>
+	  <th scope="col">Details</th>
+	  
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>21 Sept 2018</td>
+      <td>UTA Titans VS UTA Raptors</td>
+      <td>19:00</td>
+	  <td>UTA Knights</td>
+	  <td>Mayur Munot(UTA Titans)</td>
+	  <td>View</td>
+	   
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>22 Sept 2018</td>
+      <td>UTA Knights VS UTA Titans</td>
+      <td>18:00</td>
+	  <td>UTA Phantoms</td>
+	   <td>Gaurav Borikar(UTA Titans)</td>
+	  <td><a href="http://chauka.in/index.php/scoreboard/display_scoreboard/128449">View</a></td>
+	   
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>22 Sept 2018</td>
+      <td>UTA Indians VS UTA Phantoms</td>
+      <td>20:30</td>
+	  <td>UTA Titans</td>
+	   <td>Kunj Gheewala(UTA Indians)</td>
+	  <td><a href="http://chauka.in/index.php/scoreboard/display_scoreboard/128455">View</a></td>
+	  
+    </tr>
+	
+	<tr>
+     <th scope="row">4</th>
+      <td>23 Sept 2018</td>
+      <td>UTA Indians VS UTA Knights</td>
+      <td>15:30</td>
+	  <td>UTA Phantoms</td>
+	   <td>Vishal Sharma(UTA Knights)</td>
+	  <td><a href="http://chauka.in/index.php/scoreboard/display_scoreboard/128626">View</a></td>
+	   
+    </tr>
+	<tr>
+      <th scope="row">5</th>
+      <td>23 Sept 2018</td>
+      <td>UTA Phantoms VS UTA Raptors</td>
+      <td>18:00</td>
+	  <td>UTA Knights</td>
+	   <td>Sri Ram(UTA Phantoms)</td>
+	  <td><a href="http://chauka.in/index.php/scoreboard/display_scoreboard/128632">View</a></td>
+    </tr>
+	<tr>
+     <th scope="row">6</th>
+      <td>28 Sept 2018</td>
+      <td>UTA Kinghts VS UTA Phantoms</td>
+      <td>19:00</td>
+	  <td>UTA Indians</td>
+	   <td></td>
+	  <td>View</td>
+	   
+    </tr>
+	
+	<tr>
+     <th scope="row">7</th>
+      <td>29 Sept 2018</td>
+      <td>UTA Indians VS UTA Titans</td>
+      <td>18:00</td>
+	  <td>UTA Knights</td>
+	   <td></td>
+	  <td>View</td>
+	   
+    </tr>
+	<tr>
+     <th scope="row">8</th>
+      <td>29 Sept 2018</td>
+      <td>UTA Knights VS UTA Raptors</td>
+      <td>20:30</td>
+	  <td>UTA Indians</td>
+	   <td></td>
+	  <td>View</td>
+	   
+    </tr>
+	<tr>
+     <th scope="row">9</th>
+      <td>30 Sept 2018</td>
+      <td>UTA Phantoms VS UTA Titans</td>
+      <td>18:00</td>
+	  <td>UTA Raptors</td>
+	   <td></td>
+	  <td>View</td>
+	   
+    </tr>
+	<tr>
+     <th scope="row">10</th>
+      <td>30 Sept 2018</td>
+      <td>UTA Indians VS UTA Raptors</td>
+      <td>20:30</td>
+	  <td>UTA Titans</td>
+	   <td></td>
+	  <td>View</td>
+	   
+    </tr>
+	<tr>
+     <th scope="row">11</th>
+      <td>5 Oct 2018</td>
+      <td>UTA Titans VS UTA Raptors</td>
+      <td>19:00</td>
+	  <td>UTA Indians</td>
+	   <td></td>
+	  <td>View</td>
+	   
+    </tr>
+	<tr>
+     <th scope="row">12</th>
+      <td>6 Oct 2018</td>
+      <td>UTA Indians VS UTA Phantoms</td>
+      <td>18:00</td>
+	  <td>UTA Knights</td>
+	   <td></td>
+	  <td>View</td>
+	   
+    </tr>
+	<tr>
+     <th scope="row">13</th>
+      <td>6 Oct 2018</td>
+      <td>UTA Knights VS UTA Titans</td>
+      <td>20:30</td>
+	  <td>UTA Indians</td>
+	   <td></td>
+	  <td>View</td>
+	   
+    </tr>
+	<tr>
+     <th scope="row">14</th>
+      <td>7 Oct 2018</td>
+      <td>UTA Phantoms VS UTA Raptors</td>
+      <td>18:00</td>
+	  <td>UTA Titans</td>
+	   <td></td>
+	  <td>View</td>
+	   
+    </tr>
+	<tr>
+     <th scope="row">15</th>
+      <td>7 Oct 2018</td>
+      <td>UTA Indians VS UTA Knights</td>
+      <td>20:30</td>
+	  <td>UTA Phantoms</td>
+	   <td></td>
+	  <td>View</td>
+	   
+    </tr>
+	
+  </tbody>
+</table>
+</div>
+          </div>
+		  
+		  	  
+		  
+        </div>
+		</div>
+		
+		<div class="container">
+        <div class="row">
+		<div class="col-lg-10 mx-auto">
+		 <br><h2>Knockouts</h2></div>
+          <div class="col-lg-10 mx-auto"><br>
+		
+           <div style="overflow-y: auto;max-height:450px;overflow: auto;">
+			<table style="max-height:200px;overflow: scroll;"class="table table-striped">
+  <thead>
+    <tr>
+	 <th scope="col">#</th>
+      <th scope="col">Date</th>
+      <th scope="col">Teams</th>
+      <th scope="col">Time</th>
+      <th scope="col">Umpire</th>
+	  <th scope="col">Details</th>
+	  
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">21</th>
+      <td>19 Oct 2018</td>
+      <td>Rank #1 VS Rank #2 - Q1</td>
+      <td>19:00</td>
+	  <td>TBD</td>
+	  <td>View</td>
+	   
+    </tr>
+	 <tr>
+      <th scope="row">22</th>
+      <td>20 Oct 2018</td>
+      <td>Rank #3 VS Rank #4 - E</td>
+      <td>18:00</td>
+	  <td>TBD</td>
+	  <td>View</td>
+	   
+    </tr>
+	 <tr>
+      <th scope="row">23</th>
+      <td>21 Oct 2018</td>
+      <td>Loser Q1 VS Winner E - Q2</td>
+      <td>18:00</td>
+	  <td>TBD</td>
+	  <td>View</td>
+	   
+    </tr>
+	 <tr>
+      <th scope="row">24</th>
+      <td>27 Oct 2018</td>
+      <td><b>Final</b> - Winner Q1 VS winner Q2</td>
+      <td>18:00</td>
+	  <td>TBD</td>
+	  <td>View</td>
+	   
+    </tr>
+	 </tbody>
+</table>
+		
+      </div>
+	  </div></div>
+	  </div>
+	  
+    </section>
+	
+	
+
+    <section id="teams" class="bg-light">
+      <div class="container">
+        <div class="row">
+		 <div class="col-lg-10 mx-auto">
+		  <h2  >Teams</h2></div>
+          <div class="col-lg-10 mx-auto">
+           
+			<div style="overflow-y: auto;">
+          	<table class="table table-striped">
+  <thead>
+    <tr>
+      
+      <th scope="col">
+	  <u>UTA Knights</u>
+	  </th>
+      <th scope="col">
+	  <u>UTA Phantoms</u><br>
+	 
+	  
+	  
+	  </th>
+	  <th scope="col">
+	  <u>UTA Raptors</u><br>
+	 
+	  </th>
+	  <th scope="col">
+	  <u>UTA Indians</u><br>
+	
+	  
+	  </th>
+	  <th scope="col">
+	  <u>UTA Titans</u><br>
+	
+	  
+	  </th>
+	  
+	  
+    </tr>
+  </thead>
+  
+</table>		
+ </div>
+		  
+<button class="collapsible">UTA Knights</button>
+<div class="content">
+<p>
+		Roy(c)<br>
+		Nisarg Shah<br>
+		Pradeep<br>
+		Siddaram<br>
+		Daivik<br>
+		Bhaskar<br>
+		Gangadhar<br>
+		Jenil bimal desai<br>
+		Pavan Meragu<br>
+		Harsha Chaudhuri<br>
+		Harish kumar chirumamilla<br>
+		Deepak Pisal<br>
+		Ramaswamy Kasyap<br>
+		Sai Raghu Ram Madala<br>
+		Swajeet<br>
+		Amol Dhumal<br>
+		Amey Wadhavkar<br>
+		Vishal Sharma<br>
+		Harshal neware<br>
+		Vijay Kant<br>
+		Mayank Sharma<br>
+		Nirmal Kabre<br>
+		Dhruv Bawa<br>
+		</p>
+</div>
+<button class="collapsible">UTA Indians</button>
+<div class="content">
+<p>
+		Karan (c)<br>
+		Sarat Chandra <br>
+		Kunj Gheewala<br>
+		Shreyas Duraphe<br>
+		Hariharan Gopalakrishnan<br>
+		Sohail Jasani<br>
+		Nishant Chaudhary<br>
+		Himanshu Kale<br>
+		Vamsi<br>
+		Sri Padmadarshan<br>
+		Rishabh<br>
+		Tarun kanth Dhansetty<br>
+		Devarshi Dwivedi<br>
+		Nayan Kanjibhai Patel<br>
+		Satya<br>
+		Vaibhav kolhe<br>
+		Ashok Dodiya<br>
+		Anurag Kumar<br>
+		Ameya Tawde<br>
+		Aditya Zodpe<br>
+		OMKAR MURTHY NARASIMHA<br>
+		Vishesh Kumar Dwivedi<br>
+		Siddhesh Rao<br><br></p>
+</div>
+<button class="collapsible">UTA Raptors</button>
+<div class="content">
+<p>
+Aman(C)<br>
+Tejas Sambre<br>
+Madan Kumar<br>
+Ketan shah<br>
+Viek Vatsavayi<br>
+Avinash Devadiga<br>
+Haresh Patel<br>
+Rahat Ullah<br>
+Junaid Dharani<br>
+Utkarsh Patel<br>
+Aksharkumar Patel<br>
+Kunal Banekar<br>
+Pritam Karmokar<br>
+Shekhar Chaudhary<br>
+Maharshi thakkar<br>
+Kaushik<br>
+Kaushik goti<br>
+JASH SHAH<br>
+Suraj munot<br>
+Priyank Garg<br>
+Rinkesh<br>
+Lokeshwaran<br>
+Harsh Soni</p>
+</div>
+<button class="collapsible">UTA Phantoms</button>
+<div class="content">
+<p>
+Harsh (c)<br>
+Saai Sanjay<br>
+Sri Ram<br>
+Pushpak parakh<br>
+Hemil Modi <br>
+Dhanish Desai <br>
+Abhiram Kavuri <br>
+Jay Modi <br>
+Sidhant anant<br> 
+Vatsal Patel <br>
+Sai Srikrishna Teja Gudimetta <br>
+Tirth Mehulkumar Patel <br>
+Swastik <br>
+Prem <br>
+Raj Deveshkumar Naik <br>
+Aditya Ravikumar <br>
+adit shah <br>
+Jordan Nikhil Beesa<br> 
+Vaibhav Lahoti <br>
+Rishabh Desai <br>
+Jemeen Sanghvi <br>
+Sahil patel <br>
+vishnu vardhan vankadara</p>
+</div>
+<button class="collapsible">UTA Titans</button>
+<div class="content">
+<p>
+Rahul (c)<br>
+		Gaurav Borikar<br>
+		Mayur Munot<br>
+		Akhilesh Ananthula<br>
+		Jenil Mahetalia<br>
+		Srihari<br>
+		Vignesh Raja<br>
+		Divij<br>
+		Akash<br>
+		Krishnakant Sirohi<br>
+		Harsh Patel<br>
+		Vilayannur<br>
+		Chinmay Kapur<br>
+		Kailash Bhanushali<br>
+		Prashant<br>
+		Chaitanya Krishna<br>
+		Pranav Mundhada<br>
+		Gudavalli Shri Mohan Shivakanth<br>
+		Ashwath sridhar<br>
+		Bharat raj singh<br>
+		Ravi Patel<br>
+		Adil Vahora<br>
+		Chinmay Shekhar Gaikwad<br>
+		Harshal Mandaliya<br></p>
+		</div>
+        </div>
+      </div>
+	  </div>
+    </section>
+	
+	
+	
+	
+	
+	<section id="leads">
+      <div class="container">
+        <div class="row">
+		<div class="col-lg-10 mx-auto">
+		<h2 >Leading Performers</h2><br></div>
+          <div class="col-lg-10 mx-auto">
+            
+			 <h2>Batting - Orange Cap</h2>
+			<div style="overflow-y: auto;">
+			<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Team</th>
+      <th scope="col">Runs</th>
+      <th scope="col">Sixs</th>
+	  <th scope="col">Fours</th>
+	  
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+	   <td></td>
+	    
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+	   <td></td>
+	    
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+	   <td></td>
+	   
+    </tr>
+	<tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+	   <td></td>
+	    
+    </tr>
+	<tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+	   <td></td>
+	   
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Bowling -  Purple Cap</h2>
+			<div style="overflow-y: auto;">
+			<table class="table table-striped">
+  <thead>
+    <tr>
+		
+      <th scope="col">Name</th>
+      <th scope="col">Team</th>
+	   <th scope="col">Matches</th>
+      <th scope="col">Wickets</th>
+	 
+      
+	  
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Nisarg Shah</th>
+      <td>UTA Knights</td>
+	  <td>2</td>
+      <td>6</td>
+      
+	    
+    </tr>
+    <tr>
+      <th scope="row">Vaibhav Kolhe</th>
+      <td>UTA Indians</td>
+      <td>2</td>
+	  <td>5</td>
+      
+      
+	    
+    </tr>
+    <tr>
+      <th scope="row">Vishal Sharma</th>
+      <td>UTA Knights</td>
+      <td>2</td>
+        <td>4</td>
+	   
+    </tr>
+	<tr>
+      <th scope="row">Keval Lad</th>
+      <td>UTA Phantoms</td>
+      <td>2</td>
+      <td>4</td>
+	    
+    </tr>
+	<tr>
+      <th scope="row">Gaurav Borikar</th>
+      <td>UTA Titans</td>
+      <td>2</td>
+	   <td>4</td>
+	   
+     
+	   
+    </tr>
+  </tbody>
+</table>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Made with &hearts; <br> Copyright &copy; UTA Cricket 2018</p>
+		<p class="m-0 text-center text-white">Organising Team: Pradeep - Karan - Roy</p>
+		<p class="m-0 text-center text-white"> UTA Cricket Admin 2018-19: Travis Lankford(Advisor), Harsh(President), Roy(Vice-President), Karan(Treasurer)</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+  </body>
+
+</html>
